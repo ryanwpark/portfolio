@@ -6,7 +6,7 @@ import rLogo from "../assets/r-logo.png";
 const NavBar: React.FC = () => (
   <header className="header">
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: -24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.2 }}
       transition={{ duration: 1, delay: 0.1 }}
@@ -16,7 +16,20 @@ const NavBar: React.FC = () => (
           <Link to="/" className="navbar-brand">
             <img src={rLogo} alt="R" width="40" height="40" />
           </Link>
-          <ul className="navbar-nav">
+          <ul className="navbar-nav gap-2 list-group-horizontal">
+            <li className="nav-item">
+              <Link
+                className="btn btn-outline-info rounded-pill px-4 py-2"
+                style={{
+                  textDecoration: "none",
+                  fontWeight: 500,
+                  fontSize: "1.1rem",
+                }}
+                to="/projects"
+              >
+                Projects
+              </Link>
+            </li>
             <li className="nav-item">
               <Link
                 className="btn btn-outline-info rounded-pill px-4 py-2"
@@ -33,6 +46,7 @@ const NavBar: React.FC = () => (
           </ul>
         </div>
       </div>
+      <hr style={{ margin: "0rem 0" }} />
     </motion.div>
   </header>
 );
