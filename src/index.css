@@ -1,0 +1,3 @@
+.accordion-button::after {
+  background-image: unset !important;
+}

@@ -9,7 +9,7 @@ export type ProjectDetails = {
   location: string;
 };
 
-export const reactProjects: ProjectDetails[] = [
+export const ReactProjects: ProjectDetails[] = [
   {
     id: 1,
     title: "Fuel Vendor Web App",
@@ -84,6 +84,20 @@ export const JavaProjects: ProjectDetails[] = [
 export const SwiftProjects: ProjectDetails[] = [
   {
     id: 1,
+    title: "Kilterboard App",
+    tasks: [
+      "Revamping a rock climbing mobile application with the goal of offering an enhanced UI/UX by using Swift and reducing user interactions for accessing climbing routes.",
+      "Used GRDB library to create 12 API endpoints performing the necessary CRUD operations for both users and climbing routes.",
+      "Integrated Bluetooth connectivity with Apple's CoreBluetooth to communicate with the climbing wall.",
+    ],
+    startDate: "August 2025",
+    endDate: "Current",
+    technologies: ["Swift", "SFSymbols", "SQLite", "GRDB", "UIKit"],
+    company: "Personal",
+    location: "Katy, TX",
+  },
+  {
+    id: 2,
     title: "BlackJack 21 Trainer",
     tasks: [
       "Built an iOS app that simulates blackjack, allowing users to test and refine their decision making skills in a controlled environment.",
