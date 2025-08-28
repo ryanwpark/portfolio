@@ -1,22 +1,20 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavBar from './components/NavBar';
-import LandingPage from './pages/LandingPage';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import Contact from "./pages/Contact";
+import LandingPage from "./pages/LandingPage";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App: React.FC = () => {
-	return (
-		<Router>
-			<NavBar />
-			<Routes>
-				<Route path='/' element={<LandingPage />} />
-				<Route path='/login' element={<LoginPage />} />
-				<Route path='/register' element={<RegisterPage />} />
-			</Routes>
-		</Router>
-	);
+  return (
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>
+  );
 };
 
 export default App;
