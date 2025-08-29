@@ -10,12 +10,12 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const ProjectsPage: React.FC = () => {
   return (
-    <Container style={{ paddingTop: "1rem" }}>
+    <Container className="font-monospace">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
-        transition={{ duration: 1, delay: 0.7 }}
+        transition={{ duration: 1, delay: 0.3 }}
       >
         <Row className="justify-content-md-center">
           <Col md="auto">

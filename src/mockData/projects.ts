@@ -14,23 +14,23 @@ export const ReactProjects: ProjectDetails[] = [
     id: 1,
     title: "Fuel Vendor Web App",
     tasks: [
-      "Coordinated agile sprints to define team roles, prioritize development needs, and ensure collaboration aligned with industry practices.",
-      "Designed UI/UX with Tailwind components, streamlining front-end development and maintaining clean, scalable code.",
-      "Secured user authentication with JSON Web Tokens (JWT), restricting unauthorized access for vendors and clients.",
-      "Developed 12 REST API endpoints in Node.js for CRUD operations on fuel orders, integrated with a PostgreSQL database.",
-      "Implemented CI/CD pipeline with GitHub Actions, enabling smooth deployment and continuous feature integration.",
+      "Web application for fuel vendors and clients to manage and order through an intuitive interface.",
+      "Calculated fuel prices based on distance, quantity, and delivery options based on clients' needs.",
+      "Alerted vendors on low inventory via email allowing them to restock in a timely manner.",
+      "Automated order processing and notifications for vendors and clients via email.",
+      "Generated reports on fuel sales and inventory levels for vendors.",
     ],
     startDate: "Feb 2024",
     endDate: "May 2024",
     technologies: [
-      "Javascript",
       "React",
       "Postgres",
       "Azure",
       "REST API",
-      "Github",
       "Jest",
-      "Tailwind CSS",
+      "Docker",
+      "Tailwind",
+      "Node.js",
     ],
     company: "University of Houston",
     location: "Software Design COSC - 4353",
@@ -39,12 +39,10 @@ export const ReactProjects: ProjectDetails[] = [
     id: 2,
     title: "Medical Clinic Web App",
     tasks: [
-      "Designed UI/UX with Chakra UI components, ensuring clean, responsive, and efficient front-end development.",
-      "Implemented dynamic data reporting with customizable filters, enabling staff to easily access and sort patient and appointment records.",
-      "Secured application access with JSON Web Tokens (JWT), enforcing role-based authentication and authorization for patients, clients, and administrators.",
-      "Developed 31 REST API endpoints in Node.js to handle secure CRUD operations across administration, staff, and client functionalities.",
-      "Automated email notifications via SQL triggers, sending appointment details to clients upon new appointment creation.",
-      "Deployed full stack application to Heroku with a persistent MySQL database hosted on Azure.",
+      "Web application for medical clinics and patients to manage appointments, medical records, and billing information.",
+      "Implemented dynamic data reporting with customizable filters for staff to easily access and sort patient and appointment records.",
+      "Allow patients to book, reschedule, and cancel appointments through a user-friendly interface.",
+      "Automated email notifications to clients clarifying appointment details upon new appointments.",
     ],
     startDate: "Jan 2023",
     endDate: "May 2023",
@@ -68,10 +66,10 @@ export const JavaProjects: ProjectDetails[] = [
     id: 1,
     title: "Midas API",
     tasks: [
-      "Integrated Apache Kafka into Spring Boot core to consume and deserialize transaction messages, enabling asynchronous, decoupled communication between frontend and backend.",
-      "Implemented H2 in-memory SQL database with JPA entity mappings to validate and persist financial transactions, enforcing sender/recipient checks and updating account balances.",
-      "Connected external Incentive REST API via Spring’s RestTemplate, fetching incentive amounts for valid transactions and applying them to recipient balances.",
-      "Exposed REST API endpoint (/balance) on port 33400 for querying user balances, returning serialized JSON responses with default values for non-existent users.",
+      "Integrated Apache Kafka with Spring Boot application for communicating with JPMorgan Chase's data services.",
+      "Ensured account balances were updated correctly in development with an H2 in-memory database.",
+      "Validated transactions with external API and applied incentives to user balances.",
+      "Exposed REST API endpoint for querying user balances with Kafka.",
     ],
     startDate: "Aug 2025",
     endDate: "Aug 2025",
@@ -86,9 +84,9 @@ export const SwiftProjects: ProjectDetails[] = [
     id: 1,
     title: "Kilterboard App",
     tasks: [
-      "Revamping a rock climbing mobile application with the goal of offering an enhanced UI/UX by using Swift and reducing user interactions for accessing climbing routes.",
-      "Used GRDB library to create 12 API endpoints performing the necessary CRUD operations for both users and climbing routes.",
-      "Integrated Bluetooth connectivity with Apple's CoreBluetooth to communicate with the climbing wall.",
+      "Revamping a rock climbing mobile application with the goal of offering an enhanced user experience with less navigation.",
+      "Integrated Bluetooth connectivity for communication with the climbing board.",
+      "Implemented a new user interface using SwiftUI for a more modern look and feel.",
     ],
     startDate: "Aug 2025",
     endDate: "Current",
@@ -100,10 +98,9 @@ export const SwiftProjects: ProjectDetails[] = [
     id: 2,
     title: "BlackJack 21 Trainer",
     tasks: [
-      "Built an iOS app that simulates blackjack, allowing users to test and refine their decision making skills in a controlled environment.",
-      "Used GRDB and SQLite for storing and retrieving player settings and answer key for training purposes with authentication using Apple’s authorization services.",
-      "Added settings management allowing users to customize rules and preferences based on black jack table environment.",
-      "Applied MVC architecture to separate concerns and to simplify future feature expansion.",
+      "IOS App for simulating blackjack giving users the ability to practice basic strategy and card counting techniques.",
+      "Implemented a scoring system to track user performance and progress over time.",
+      "Added customizable settings allowing users to customize rulesets based on the house.",
     ],
     startDate: "Jun 2025",
     endDate: "Jul 2025",
@@ -114,3 +111,20 @@ export const SwiftProjects: ProjectDetails[] = [
 ];
 
 export const PythonProjects: ProjectDetails[] = [];
+// Combine all projects and order chronologically by startDate
+function parseDate(dateStr: string): Date {
+  // Handles 'Current' as the latest date
+  if (dateStr.toLowerCase() === "current") return new Date(3000, 0, 1);
+  // Handles formats like 'Feb 2024', 'Aug 2025', etc.
+  const [month, year] = dateStr.split(" ");
+  return new Date(`${month} 1, ${year}`);
+}
+
+export const allProjects: ProjectDetails[] = [
+  ...ReactProjects,
+  ...JavaProjects,
+  ...SwiftProjects,
+  ...PythonProjects,
+].sort(
+  (a, b) => parseDate(a.startDate).getTime() - parseDate(b.startDate).getTime()
+);
