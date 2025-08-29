@@ -1,4 +1,4 @@
-# Apple Minimalist React Vite App
+React Vite Portfolio
 
 This project is a front-end web application built with React, Vite, and
 TypeScript. It features:
