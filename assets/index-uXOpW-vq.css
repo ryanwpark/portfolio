@@ -1,4 +1,4 @@
-.accordion-button:after{background-image:unset!important}/*!
+.accordion-button:after{background-image:unset!important}.custom-toggle-btn{display:flex;align-items:center;justify-content:center;position:relative}.arrow{display:inline-block;font-size:1.5rem;animation:oscillate 1s infinite alternate}.arrow-left{margin-right:1rem;animation-name:oscillate-left}@keyframes oscillate-left{0%{transform:translate(-5px)}to{transform:translate(5px)}}/*!
  * Bootstrap Icons v1.13.1 (https://icons.getbootstrap.com/)
  * Copyright 2019-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/icons/blob/main/LICENSE)
